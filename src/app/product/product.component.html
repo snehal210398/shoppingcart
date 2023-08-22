@@ -1,0 +1,29 @@
+<div class="card shadow product-card">
+  <div class="text-center">
+    <img [src]="product.image" class="product-img pt-2" alt="..." />
+  </div>
+  <div class="card-body product-text">
+    <div class="text-center">
+      <h5 class="card-title">
+        {{
+          product.title.length > 25
+            ? product.title.substring(0, 25).concat(" ...")
+            : product.title
+        }}
+      </h5>
+    </div>
+    <h6 class="card-title">{{ product.category }}</h6>
+    <p class="card-text">
+      {{
+        product.description.length > 105
+          ? product.description.substring(0, 105).concat(" ...more")
+          : product.description
+      }}
+    </p>
+    <h6 class="d-flex justify-content-between">
+      <span>Price: {{ product.price }}</span
+      ><span>Rating: {{ product.rating.rate }}</span>
+    </h6>
+    <button class="btn btn-primary" (click)="addProduct()">Add to cart</button>
+  </div>
+</div>

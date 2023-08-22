@@ -1,0 +1,20 @@
+<div class="d-flex flex-column row-gap-5 pt-3">
+    <div class="text-center fw-bold h4" *ngIf="selectedProduct.length == 0">
+        Please Select a Product
+    </div>
+  <app-cart-item
+    *ngFor="let product of selectedProduct"
+    [product]="product"
+  ></app-cart-item>
+  <div class="row product-price m-auto">
+    <h5>Price Details</h5>
+    <h6 class="d-flex justify-content-between">
+        <span>Total Price: </span
+        ><span>{{totalPrice | number}}</span>
+      </h6>
+    <button role="button" class="btn btn-primary" [routerLink]="'/user'" [disabled]="totalPrice == 0 ? true : false">PLACE ORDER</button>
+</div>
+</div>
+
+
+

@@ -1,0 +1,28 @@
+<div class="card shadow flex-row m-auto product-card">
+  <div class="text-center">
+    <img
+      [src]="product.image"
+      class="card-img-top product-img p-3"
+      alt="product-img"
+    />
+  </div>
+  <div class="card-body product-text row">
+    <div class="">
+      <h5 class="card-title">
+        {{
+          product.title.length > 25
+            ? product.title.substring(0, 25).concat(" ...")
+            : product.title
+        }}
+      </h5>
+    </div>
+    <h6 class="card-title">{{ product.category }}</h6>
+    <h6 class="d-flex justify-content-between">
+      <span>Price: {{ product.price }}</span
+      ><span>Rating: {{ product.rating.rate }}</span>
+    </h6>
+    <button class="btn btn-primary" (click)="removeProduct()">
+      Remove Item
+    </button>
+  </div>
+</div>
